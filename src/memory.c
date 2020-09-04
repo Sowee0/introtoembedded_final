@@ -50,6 +50,17 @@ void clear_all(char * ptr, unsigned int size){
 
 uint8_t * my_memmove(uint8_t * src, uint8_t * dst, size_t length){
 
+  uint8_t *sourcePointer;
+  uint8_t *destinationPointer;
+
+  for( size_t i = 0 ; i < length; i++){
+    *(src + i) = *(dst + i);
+
+    *dst = *ptr;
+  }
+
+  return dst;
+
 }
 
 uint8_t * my_memcopy(uint8_t * src, uint8_t * dst, size_t length){
@@ -73,5 +84,5 @@ int32_t * reserve_words(size_t length){
 }
 
 void free_words(int32_t * src){
-  
+
 }
