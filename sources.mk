@@ -21,7 +21,7 @@ SOURCEMSP = ./src/interrupts_msp432p401r_gcc.c \
 			./src/system_msp432p401r.c
 
 # Add your include paths to this variable
-INCLUDECOMMON = ../include/common
+INCLUDECOMMON = ./include/common
 
-INCLUDECMSIS = ../include/CMSIS 
-INCLUDEMSP =  ../include/msp432
+INCLUDECMSIS = ./include/CMSIS 
+INCLUDEMSP =  ./include/msp432
