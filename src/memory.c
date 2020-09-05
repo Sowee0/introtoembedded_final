@@ -95,6 +95,17 @@ uint8_t * my_memzero(uint8_t * src, size_t length){
 
 uint8_t * my_reverse(uint8_t * src, size_t length){
 
+  int8_t * temp = malloc(length*sizeof(uint8_t))
+
+  for(size_t i = 0; i < length; i++){
+    *(temp + length - i -1) = *(src + i);
+
+  }
+
+  for(size_t i = 0; i < length; i++){
+    *(src + i) = *(temp + i);
+  }
+
 }
 
 int32_t * reserve_words(size_t length){
