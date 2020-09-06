@@ -110,7 +110,7 @@ uint8_t * my_memmove(uint8_t * src, uint8_t * dst, size_t length);
  * @brief Copies a length of data from source to destination
  *
  * Copies a set amount of bytes from a pointer source to a 
- * desstination. Copy occurs even if data overlaps.
+ * destination. Copy occurs even if data overlaps.
  *
  * @param src Pointer to the source 
  * @param dest Pointer to the destination
