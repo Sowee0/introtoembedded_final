@@ -49,8 +49,8 @@ CPPFLAGs =
 #Setting flags according to the target
 ifeq ($(PLATFORM),HOST)
 		CC = gcc
-		CFLAGS = $(COMMONCFLAGS) -I$(INCLUDECOMMON) -D$(PLATFORM)
-		OFILES = main.o memory.o data.o course1.o stats.o
+		CFLAGS = $(COMMONCFLAGS) -I$(INCLUDECOMMON) -D$(PLATFORM) -D$(COURSE) -D$(VERBOSITY)
+		OFILES = $(SOURCES:.c=.o)
 		SOURCE = $(SOURCECOMMON)
 		OBJDUMP = objdump
 		SIZEUTIL = size
@@ -59,8 +59,8 @@ ifeq ($(PLATFORM),HOST)
 		CC = arm-none-eabi-gcc
 		LDFLAGS = -T$(LINKER_FILE)
 		CFLAGS = $(COMMONCFLAGS) -I$(INCLUDECOMMON) -I$(INCLUDEMSP) -I$(INCLUDECMSIS) -D$(PLATFORM)  -mcpu=$(CPU) -mthumb -march=$(ARCH) -mfloat-abi=hard -mfpu=fpv4-sp-d16 --specs=$(SPECS)
-		OFILES = main.o memory.o data.o course1.o stats.o startup_msp432p401r_gcc.o system_msp432p401r.o interrupts_msp432p401r_gcc.o
-		IFILES = main.i memory.i data.i course1.i stats.i startup_msp432p401r_gcc.i system_msp432p401r.i interrupts_msp432p401r_gcc.i
+		OFILES = $(SOURCES:.c=.o)
+		IFILES = $(SOURCES:.c=.i)
 		SOURCE = $(SOURCECOMMON) $(SOURCEMSP)
 		OBJDUMP = arm-none-eabi-objdump
 		SIZEUTIL = arm-none-eabi-size
