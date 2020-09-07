@@ -30,7 +30,7 @@ MAPFILE = final.map
 # Platform Overrides
 PLATFORM = HOST
 COURSE = COURSE1
-VERBOSITY = 
+VERBOSITY = DEBUG
 
 # Architectures Specific Flags
 LINKER_FILE = ./msp432p401r.lds 
@@ -43,7 +43,7 @@ SPECS = nosys.specs
 # Compiler Flags and Defines
 CC = gcc
 LDFLAGS = 
-COMMONCFLAGS = -O0 -Wall -Werror -g -std=c99
+COMMONCFLAGS = -O0 -Wall  -g -std=c99
 CPPFLAGs = 
 
 #Setting flags according to the target
