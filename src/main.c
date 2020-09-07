@@ -20,11 +20,15 @@
  * @date April 1 2017
  *
  */
-#include "platform.h"
-#include "memory.h"
-#include "course1.h"
 
-int main(void){
+#include "platform.h"
+#include "course1.h"
+#include "memory.h"
+
+
+
+int main(){
+
 	#ifdef COURSE1
 		course1();
 	#endif
