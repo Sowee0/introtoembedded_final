@@ -18,6 +18,11 @@
 
 #ifndef __DATA_H__
 #define __DATA_H__
+#endif
+
+#include <stdint.h>
+#include "platform.h"
+#include "memory.h"
 
 /**
  * @brief converts an integer to ASCII 
@@ -31,7 +36,7 @@
  *
  * @return length of the converted data
  */
-uint8_t my_itoa(int32_t data, uint8_t * ptr, uint32_t base)
+uint8_t my_itoa(int32_t data, uint8_t * ptr, uint32_t base);
 
 /**
  * @brief converts an ASCII to integer 
@@ -45,4 +50,5 @@ uint8_t my_itoa(int32_t data, uint8_t * ptr, uint32_t base)
  *
  * @return the 32-bit signed converted integer
  */
-int32_t my_atoi(uint8_t * ptr, uint8_t digits, uint32_t base)
+
+int32_t my_atoi(uint8_t * ptr, uint8_t digits, uint32_t base);
