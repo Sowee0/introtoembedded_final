@@ -55,10 +55,7 @@ void main() {
 }
 
 void print_statistics(unsigned char array[], unsigned int size){
-
-  char maximum, minimum, median;
-  
-  //median  = find_median(array, size);
+ 
 
   printf("The array has a maximum value of %d and a minimum value of %d\n", find_maximum(array, size),find_minimum(array, size));
 
@@ -67,12 +64,15 @@ void print_statistics(unsigned char array[], unsigned int size){
 }
 
 void print_array(unsigned char array[], unsigned int size){
-  printf("Printing all the %d elements of the array\n [", size);
-  for(int i=0; i < size; i++){
-    printf("%d ", array[i]);
-  }
-  
-  printf("]\n");
+
+    #ifdef VERBOSE
+    printf("Printing all the %d elements of the array\n [", size);
+    for(int i=0; i < size; i++){
+      printf("%d ", array[i]);
+    }
+    
+    printf("]\n");
+    #endif 
 }
 
 
