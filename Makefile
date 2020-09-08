@@ -30,7 +30,7 @@ MAPFILE = final.map
 # Platform Overrides
 PLATFORM = HOST
 COURSE = COURSE1
-VERBOSITY = DEBUG
+VERBOSITY = VERBOSE
 
 # Architectures Specific Flags
 LINKER_FILE = ./msp432p401r.lds 
