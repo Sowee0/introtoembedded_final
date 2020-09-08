@@ -50,8 +50,8 @@ CPPFLAGs =
 ifeq ($(PLATFORM),HOST)
 		CC = gcc
 		CFLAGS = $(COMMONCFLAGS) -I$(INCLUDECOMMON) -D$(PLATFORM) -D$(COURSE) -D$(VERBOSITY)
-		OFILES = main.o memory.o stats.o course1.o data.o
 		SOURCE = $(SOURCECOMMON)
+		OFILES = $(SOURCE:.c=.o)
 		OBJDUMP = objdump
 		SIZEUTIL = size
 		
@@ -59,9 +59,9 @@ ifeq ($(PLATFORM),HOST)
 		CC = arm-none-eabi-gcc
 		LDFLAGS = -T$(LINKER_FILE)
 		CFLAGS = $(COMMONCFLAGS) -I$(INCLUDECOMMON) -I$(INCLUDEMSP) -I$(INCLUDECMSIS) -D$(PLATFORM)  -mcpu=$(CPU) -mthumb -march=$(ARCH) -mfloat-abi=hard -mfpu=fpv4-sp-d16 --specs=$(SPECS)
-		OFILES = main.o memory.o stats.o course1.o data.o
-		IFILES = main.i memory.i stats.i course1.i data.i
 		SOURCE = $(SOURCECOMMON) $(SOURCEMSP)
+		OFILES = $(SOURCE:.c=.o)
+		IFILES = $(SOURCE:.c=.i)
 		OBJDUMP = arm-none-eabi-objdump
 		SIZEUTIL = arm-none-eabi-size
 	endif
@@ -78,9 +78,11 @@ build: $(OFILES)
 #This rule compiles the object files
 %.o: $(SOURCE)
 	$(CC) -c $(CFLAGS) $(SOURCE)
+	mv *.o ./src/
 
 %.i: $(SOURCE)
-	$(CC) -E $(CFLAGS) $(SOURCE)  
+	$(CC) -E $(CFLAGS) $(SOURCE)
+	mv *.i ./src/
 
 %.asm: $(OFILES)
 	$(CC) -c $(CFLAGS) $(SOURCE) -S
@@ -94,10 +96,10 @@ compile-all: $(OFILES)
 #Removes all compiled objects, preprocessed outputs, assembly outputs
 .PHONY: clean
 clean:
-	rm -f *.map
-	rm -f *.asm
-	rm -f *.o
-	rm -f *.i
-	rm -f *.s 
-	rm -f *.out
+	rm -f ./src/*.map
+	rm -f ./src/*.asm
+	rm -f ./src/*.o
+	rm -f ./src/*.i
+	rm -f ./src/*.s 
+	rm -f ./*.out
 
