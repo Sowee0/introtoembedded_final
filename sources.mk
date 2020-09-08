@@ -11,9 +11,9 @@
 
 # Add your Source files to this variable
 SOURCECOMMON = ./src/main.c \
-               ./src/memory.c\
-               ./src/stats.c\
-               ./src/course1.c\
+               ./src/memory.c \
+               ./src/stats.c \
+               ./src/course1.c \
                ./src/data.c
 
 SOURCEMSP = ./src/interrupts_msp432p401r_gcc.c \
