@@ -117,4 +117,4 @@ int find_minimum(unsigned char array[], unsigned int size);
 
 
 
-#endif /* __STATS_H__ */
+#endif __STATS_H__ 
