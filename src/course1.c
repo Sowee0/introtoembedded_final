@@ -340,7 +340,12 @@ void course1(void)
   for ( i = 0; i < TESTCOUNT; i++) 
   {
      #ifdef DEBUG
-    PRINTF("Test #%d FAILED\n", i);
+     if(results[i] == 0)
+     PRINTF("Test #%d FAILED\n", i);
+     else
+     PRINTF("Test #%d PASSED\n", i);
+     
+     
     #endif
     failed += results[i];
   }
