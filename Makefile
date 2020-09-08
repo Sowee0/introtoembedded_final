@@ -50,7 +50,7 @@ CPPFLAGs =
 ifeq ($(PLATFORM),HOST)
 		CC = gcc
 		CFLAGS = $(COMMONCFLAGS) -I$(INCLUDECOMMON) -D$(PLATFORM) -D$(COURSE) -D$(VERBOSITY)
-		OFILES = $(SOURCES:.c=.o)
+		OFILES = main.o memory.o stats.o course1.o data.o
 		SOURCE = $(SOURCECOMMON)
 		OBJDUMP = objdump
 		SIZEUTIL = size
@@ -59,8 +59,8 @@ ifeq ($(PLATFORM),HOST)
 		CC = arm-none-eabi-gcc
 		LDFLAGS = -T$(LINKER_FILE)
 		CFLAGS = $(COMMONCFLAGS) -I$(INCLUDECOMMON) -I$(INCLUDEMSP) -I$(INCLUDECMSIS) -D$(PLATFORM)  -mcpu=$(CPU) -mthumb -march=$(ARCH) -mfloat-abi=hard -mfpu=fpv4-sp-d16 --specs=$(SPECS)
-		OFILES = $(SOURCES:.c=.o)
-		IFILES = $(SOURCES:.c=.i)
+		OFILES = main.o memory.o stats.o course1.o data.o
+		IFILES = main.i memory.i stats.i course1.i data.i
 		SOURCE = $(SOURCECOMMON) $(SOURCEMSP)
 		OBJDUMP = arm-none-eabi-objdump
 		SIZEUTIL = arm-none-eabi-size
