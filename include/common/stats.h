@@ -21,6 +21,7 @@
 #ifndef __STATS_H__
 #define __STATS_H__
 
+
 /* Add Your Declarations and Function Comments here */
 
 void print_statistics(unsigned char array[], unsigned int size);
@@ -115,6 +116,6 @@ int find_minimum(unsigned char array[], unsigned int size);
  */
 
 
+#endif
 
 
-#endif __STATS_H__ 
